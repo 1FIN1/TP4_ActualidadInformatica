@@ -1,0 +1,1 @@
+Este archivo representa el trabajo del issue #1 - Inscripción a evento.
