@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=tp
+      - DB_USER=usuario
+      - DB_PASSWORD=clave
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: tp
+      POSTGRES_USER: usuario
+      POSTGRES_PASSWORD: clave
+    ports:
+      - "5432:5432"
