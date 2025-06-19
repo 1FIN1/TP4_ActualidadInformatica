@@ -8,8 +8,6 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copiamos el código de la app
-COPY main.py .
 
 # Exponemos el puerto
 EXPOSE 8000
