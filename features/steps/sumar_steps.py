@@ -1,6 +1,7 @@
 
-from behave import *
-from app import sumar 
+from behave import given, when, then
+from app import sumar  # asegurate de que sumar esté definida en app.py
+
 @given('que tengo los números {num1:d} y {num2:d}')
 def step_impl(context, num1, num2):
     context.num1 = num1
@@ -12,4 +13,4 @@ def step_impl(context):
 
 @then('el resultado debe ser {esperado:d}')
 def step_impl(context, esperado):
-    assert context.resultado == esperado
+    assert context.resultado == esperado, f"Esperado {esperado}, pero fue {context.resultado}"
