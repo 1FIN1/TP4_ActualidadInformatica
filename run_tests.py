@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     # Usamos el path completo de la carpeta tests para asegurar la importación
     # os.path.join(project_root, 'tests') crea la ruta absoluta a la carpeta tests
-    suite = loader.discover(start_dir=os.path.join(project_root, 'tests'), pattern='test*.py')
+    suite = loader.discover(start_dir=os.path.join(project_root, 'test'), pattern='test*.py')
 
     runner = unittest.TextTestRunner(verbosity=2)
     runner.run(suite)
